@@ -5,6 +5,7 @@ use App\Http\Controllers\LocationController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GotrasController;
 use App\Http\Controllers\DistrictController;
+use App\Http\Controllers\TehsilController;
 use App\Http\Controllers\UserController;
 
 // Route::get('/login', [\App\Http\Controllers\UserController::class, 'index'])->name('login');
@@ -20,9 +21,26 @@ Route::middleware('auth')->group(function () {
     Route::get('state/add', [DashboardController::class, 'add'])->name('state.add');
     Route::post('state/addNew', [DashboardController::class, 'store'])->name('state.addNew');
     Route::get('state/edit/{id}', [DashboardController::class, 'edit'])->name('state.edit');
-    Route::post('state/editdocuments/{id}', [DashboardController::class, 'update'])->name('state.editstate');
+    Route::post('state/editstate/{id}', [DashboardController::class, 'update'])->name('state.editstate');
     Route::get('state/delete/{id}', [DashboardController::class, 'destroy'])->name('state.delete');
-   
+
+
+    //admin for vaishnav parichya District
+    Route::get('dist/listing', [DistrictController::class, 'listing'])->name('dist.list');
+    Route::get('dist/add', [DistrictController::class, 'add'])->name('dist.add');
+    Route::post('dist/addNew', [DistrictController::class, 'store'])->name('dist.addNew');
+    Route::get('dist/edit/{id}', [DistrictController::class, 'edit'])->name('dist.edit');
+    Route::post('dist/editdist/{id}', [DistrictController::class, 'update'])->name('dist.editdist');
+    Route::get('dist/delete/{id}', [DistrictController::class, 'destroy'])->name('dist.delete');
+
+    //admin for vaishnav parichya Tehsils
+    Route::get('tehsil/listing', [TehsilController::class, 'listing'])->name('tehsil.list');
+    Route::get('tehsil/add', [TehsilController::class, 'add'])->name('tehsil.add');
+    Route::post('tehsil/addNew', [TehsilController::class, 'store'])->name('tehsil.addNew');
+    Route::get('tehsil/edit/{id}', [TehsilController::class, 'edit'])->name('tehsil.edit');
+    Route::post('tehsil/edittehsil/{id}', [TehsilController::class, 'update'])->name('tehsil.edittehsil');
+    Route::get('tehsil/delete/{id}', [TehsilController::class, 'destroy'])->name('tehsil.delete');
+
 });
 
 
@@ -55,7 +73,7 @@ Route::get('district/listing', [DistrictController::class, 'listing'])->name('di
 
 
 
-// php artisan make:controller UserController --model=Gotras
+// php artisan make:controller TehsilController --model=Gotras
 
 // php artisan make:migration change_column_users--table=tbl_tyremaster
 

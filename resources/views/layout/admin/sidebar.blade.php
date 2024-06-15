@@ -48,26 +48,23 @@
                     <p>State </p>
                 </a>
             </li>
-
             <li class="nav-item active">
-                <a href="{{ route('district.list') }}">
+                <a href="{{ route('dist.list') }}">
                     <i class="la la-building"></i>
                     <p>District </p>
                 </a>
             </li>
+            <li class="nav-item active">
+                <a href="{{ route('tehsil.list') }}">
+                    <i class="la la-building"></i>
+                    <p>Tehsils</p>
+                </a>
+            </li>
 
-            <li class="nav-item active">
-                <a href="{{ route('admin.admindashboard') }}">
-                    <i class="la la-map"></i>
-                    <p>Tehsils </p>
-                </a>
-            </li>
-            <li class="nav-item active">
-                <a href="{{ route('admin.admindashboard') }}">
-                    <i class="la la-map"></i>
-                    <p>City/Village </p>
-                </a>
-            </li>
+
+
+
+
         </ul>
 
         </ul>

@@ -13,5 +13,8 @@ class Districts extends Model
     protected $fillable = [
         'state_id',
         'name',
+
      ];
+     public $timestamps = false;
+     protected $primarykey = 'id';
 }
