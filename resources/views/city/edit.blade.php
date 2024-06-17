@@ -1,5 +1,5 @@
 @extends('layout.admin.adminapp')
-@section('title', 'add')
+@section('title', 'Update City')
 @section('content')
 
     <div class="content">
@@ -7,17 +7,16 @@
             <div>
                 <div class="row align-items-center">
                     <div class="col-md-6 text-left">
-                        <h4 class="page-title">Add New Tehsil</h4>
+                        <h4 class="page-title">Update City/Village</h4>
                     </div>
                     <div class="col-md-6 text-right">
-                        <a href="{{ route('tehsil.list') }}" class="btn btn-primary">
-                            <i class="fas fa-plus"></i>
-                            All Tehsil
+                        <a href="{{ route('city.list') }}" class="btn btn-primary">
+                            <i class="fas fa-arrow-left"></i>
+                        City/Village Listing
                         </a>
                     </div>
                 </div>
             </div>
-
 
             <!-- Display Success Message -->
             @if (session('success'))
@@ -37,44 +36,40 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-body">
-                            <form action="{{ route('tehsil.addNew') }}" method="post">
+                            <form action="{{ route('city.editcity', ['id' => $city->id]) }}" method="POST">
                                 @csrf
+                                @method('PUT')
+                                <!-- Your form fields -->
                                 <div class="row">
                                     <div class="col-6">
-                                        <div class="input-style-1">
-
-                                            <label for="district_id">District Name<span class="text-danger">*</span></label>
-                                            <select id="district_id" name="district_id"
-                                                class="form-control @error('district_id') is-invalid @enderror">
-                                                <option value="">Select District</option>
-                                                @foreach ($districts as $districts)
-                                                    <option value="{{ $districts->id }}"
-                                                        {{ old('district_id', $district->state_id ?? '') == $districts->id ? 'selected' : '' }}>
-                                                        {{ $districts->name }}
+                                        <div class="form-group">
+                                            <label for="tehsil_id">Select Tehsil</label>
+                                            <select id="tehsil_id" name="tehsil_id" class="form-control @error('tehsil_id') is-invalid @enderror">
+                                                <option value="">Select Tehsil</option>
+                                                @foreach ($tehsils as $tehsil)
+                                                    <option value="{{ $tehsil->id }}" {{ $tehsil->id == $city->tehsil_id ? 'selected' : '' }}>
+                                                        {{ $tehsil->name }}
                                                     </option>
                                                 @endforeach
                                             </select>
-                                            @error('district_id')
+                                            @error('tehsil_id')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
                                     </div>
                                     <div class="col-6">
-                                        <div class="input-style-1">
-                                            <label id="name">Tehsil Name<span class="text-danger">*</span></label>
-                                            <input type="text" name="name" id="name" value="{{ old('name') }}"
-                                                class="form-control @error('name') is-invalid @enderror" />
+                                        <div class="form-group">
+                                            <label for="name">City/Village Name</label>
+                                            <input type="text" id="name" name="name" class="form-control" value="{{ $city->name }}" required>
                                             @error('name')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card-footer">
-                                    <button class="btn btn-primary btn-round btn-border btn-sm"
-                                        type="submit">Submit</button>
-                                    <button class="btn btn-primary btn-round btn-border btn-sm"
-                                        type="reset">Reset</button>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary">Update</button>
+                                    <a href="{{ route('city.list') }}" class="btn btn-secondary">Cancel</a>
                                 </div>
                             </form>
                         </div>

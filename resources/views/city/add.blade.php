@@ -7,12 +7,12 @@
             <div>
                 <div class="row align-items-center">
                     <div class="col-md-6 text-left">
-                        <h4 class="page-title">Add New Gotra</h4>
+                        <h4 class="page-title">Add New City/Village</h4>
                     </div>
                     <div class="col-md-6 text-right">
-                        <a href="{{ route('gotra.list') }}" class="btn btn-primary">
+                        <a href="{{ route('tehsil.list') }}" class="btn btn-primary">
                             <i class="fas fa-plus"></i>
-                            All Gotra
+                            All City/Village
                         </a>
                     </div>
                 </div>
@@ -37,25 +37,34 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-body">
-                            <form action="{{ route('gotra.addNew') }}" method="post">
+                            <form action="{{ route('city.addNew') }}" method="post">
                                 @csrf
                                 <div class="row">
                                     <div class="col-6">
                                         <div class="input-style-1">
-                                            <label id="gotra">Gotra Name<span class="text-danger">*</span></label>
-                                            <input type="text" name="gotra" id="gotra" value="{{ old('gotra') }}"
-                                                class="form-control @error('name') is-invalid @enderror" />
-                                            @error('gotra')
+
+                                            <label for="tehsil_id">Tehsil Name<span class="text-danger">*</span></label>
+                                            <select id="tehsil_id" name="tehsil_id"
+                                                class="form-control @error('tehsil_id') is-invalid @enderror">
+                                                <option value="">Select District</option>
+                                                @foreach ($tehsils as $tehsil)
+                                                    <option value="{{ $tehsil->id }}"
+                                                        {{ old('tehsil_id', $tehsil->tehsil_id ?? '') == $tehsil->id ? 'selected' : '' }}>
+                                                        {{ $tehsil->name }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                            @error('tehsil_id')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="input-style-1">
-                                            <label id="dawara">Dawara Name<span class="text-danger">*</span></label>
-                                            <input type="text" name="dawara" id="dawara" value="{{ old('dawara') }}"
-                                                class="form-control @error('dawara') is-invalid @enderror" />
-                                            @error('dawara')
+                                            <label id="name">City/Village Name<span class="text-danger">*</span></label>
+                                            <input type="text" name="name" id="name" value="{{ old('name') }}"
+                                                class="form-control @error('name') is-invalid @enderror" />
+                                            @error('name')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>

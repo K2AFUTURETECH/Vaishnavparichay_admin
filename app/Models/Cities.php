@@ -16,4 +16,6 @@ class Cities extends Model
         'name',
         'id'
     ];
+    public $timestamps = false;
+    protected $primarykey = 'id';
 }

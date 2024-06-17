@@ -44,20 +44,19 @@
 
                                     </tr>
                                 </thead>
-                                 <tbody>
-                                     @if (isset($districts))
-                                        @foreach ($districts as $district)
+                                <tbody>
+                                    @if (isset($tehsils))
+                                        @foreach ($tehsils as $tehsil)
                                             <tr>
                                                 <th scope="row">{{ $loop->iteration }}</th>
-                                                <td>{{ $district->district_id }}</td>
-                                                <td>{{ $district->name }}</td>
-
+                                                <td>{{ $tehsil->district_name }}</td>
+                                                <td>{{ $tehsil->tehsil_name }}</td>
                                                 <td>
-                                                    <a href="{{route('dist.edit', ['id' => $district->id]) }}"
+                                                    <a href="{{ route('tehsil.edit', ['id' => $tehsil->id]) }}"
                                                         class="status-active rounded-pill" title="Edit">
                                                         <i class="lni lni-pencil-alt"></i>
                                                     </a>
-                                                    <a href="{{route('dist.delete', ['id' => $district->id])}}"
+                                                    <a href="{{ route('tehsil.delete', ['id' => $tehsil->id]) }}"
                                                         class="status-inactive rounded-pill"
                                                         onclick="return confirm('Are you sure?')" title="Delete">
                                                         <i class="lni lni-trash-can"></i>

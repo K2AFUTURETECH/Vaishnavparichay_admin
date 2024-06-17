@@ -1,5 +1,5 @@
 @extends('layout.admin.adminapp')
-@section('title', 'Edit')
+@section('title', 'add')
 @section('content')
 
     <div class="content">
@@ -7,12 +7,12 @@
             <div>
                 <div class="row align-items-center">
                     <div class="col-md-6 text-left">
-                        <h4 class="page-title">Update District</h4>
+                        <h4 class="page-title">UpdateTehsil</h4>
                     </div>
                     <div class="col-md-6 text-right">
-                        <a href="{{ route('dist.list') }}" class="btn btn-primary">
+                        <a href="{{ route('tehsil.list') }}" class="btn btn-primary">
                             <i class="fas fa-plus"></i>
-                            All District
+                            All Tehsil
                         </a>
                     </div>
                 </div>
@@ -37,32 +37,32 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-body">
-                            <form action="{{ route('dist.addNew') }}" method="post">
+                            <form action="{{ route('tehsil.addNew') }}" method="post">
                                 @csrf
                                 <div class="row">
                                     <div class="col-6">
                                         <div class="input-style-1">
 
-                                            <label for="state_id">State Name<span class="text-danger">*</span></label>
-                                            <select id="state_id" name="state_id"
-                                                class="form-control @error('state_id') is-invalid @enderror">
-                                                <option value="">Select State</option>
-                                                @foreach ($states as $state)
-                                                    <option value="{{ $state->id }}"
-                                                       {{$state->id==$data->state_id?'selected':""}}>
-                                                        {{ $state->name }}
+                                            <label for="district_id">District Name<span class="text-danger">*</span></label>
+                                            <select id="district_id" name="district_id"
+                                                class="form-control @error('district_id') is-invalid @enderror">
+                                                <option value="">Select District</option>
+                                                @foreach ($districts as $districts)
+                                                    <option value="{{ $districts->id }}"
+                                                        {{ $districts->id == $data->district_id ? 'selected' : '' }}>
+                                                        {{ $districts->name }}
                                                     </option>
                                                 @endforeach
                                             </select>
-                                            @error('state_id')
+                                            @error('district_id')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="input-style-1">
-                                            <label id="name">District Name<span class="text-danger">*</span></label>
-                                            <input type="text" name="name" id="name" value="{{$data->name}}"
+                                            <label id="name">Tehsil Name<span class="text-danger">*</span></label>
+                                            <input type="text" name="name" id="name" value="{{ $data->name }}"
                                                 class="form-control @error('name') is-invalid @enderror" />
                                             @error('name')
                                                 <div class="invalid-feedback">{{ $message }}</div>

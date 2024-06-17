@@ -37,7 +37,7 @@
             </li>
             <hr>
             <li class="nav-item active">
-                <a href="{{ route('admin.admindashboard') }}">
+                <a href="{{ route('gotra.list') }}">
                     <i class="la la-user"></i>
                     <p>Gotra </p>
                 </a>
@@ -59,7 +59,13 @@
                     <i class="la la-building"></i>
                     <p>Tehsils</p>
                 </a>
+            <li class="nav-item active">
+                <a href="{{ route('city.list') }}">
+                    <i class="la la-building"></i>
+                    <p>City/Village</p>
+                </a>
             </li>
+
 
 
 

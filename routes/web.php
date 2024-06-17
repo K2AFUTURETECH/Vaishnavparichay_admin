@@ -7,6 +7,7 @@ use App\Http\Controllers\GotrasController;
 use App\Http\Controllers\DistrictController;
 use App\Http\Controllers\TehsilController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CityController;
 
 // Route::get('/login', [\App\Http\Controllers\UserController::class, 'index'])->name('login');
 Route::get('/login', [UserController::class, 'index'])->name('login');
@@ -41,6 +42,21 @@ Route::middleware('auth')->group(function () {
     Route::post('tehsil/edittehsil/{id}', [TehsilController::class, 'update'])->name('tehsil.edittehsil');
     Route::get('tehsil/delete/{id}', [TehsilController::class, 'destroy'])->name('tehsil.delete');
 
+    //admin for vaishnav parichya Tehsils
+    Route::get('city/listing', [CityController::class, 'listing'])->name('city.list');
+    Route::get('city/add', [CityController::class, 'add'])->name('city.add');
+    Route::post('city/addNew', [CityController::class, 'store'])->name('city.addNew');
+    Route::get('city/edit/{id}', [CityController::class, 'edit'])->name('city.edit');
+    Route::put('city/editcity/{id}', [CityController::class, 'update'])->name('city.editcity');
+    Route::get('city/delete/{id}', [CityController::class, 'destroy'])->name('city.delete');
+
+    //admin for vaishnav parichya Tehsils
+    Route::get('gotra/listing', [GotrasController::class, 'listing'])->name('gotra.list');
+    Route::get('gotra/add', [GotrasController::class, 'add'])->name('gotra.add');
+    Route::post('gotra/addNew', [GotrasController::class, 'store'])->name('gotra.addNew');
+    Route::get('gotra/edit/{id}', [GotrasController::class, 'edit'])->name('gotra.edit');
+    Route::put('gotra/editgotra/{id}', [GotrasController::class, 'update'])->name('gotra.editgotra');
+    Route::get('gotra/delete/{id}', [GotrasController::class, 'destroy'])->name('gotra.delete');
 });
 
 
@@ -73,7 +89,7 @@ Route::get('district/listing', [DistrictController::class, 'listing'])->name('di
 
 
 
-// php artisan make:controller TehsilController --model=Gotras
+// php artisan make:controller GotrasController --model=Gotras
 
 // php artisan make:migration change_column_users--table=tbl_tyremaster
 

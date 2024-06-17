@@ -9,11 +9,14 @@ use Laravel\Sanctum\HasApiTokens;
 class Gotras extends Model
 {
     use HasFactory,HasApiTokens;
-    protected $table = 'families';
+    // protected $table = 'families';
+    protected $table = 'gotras';
 
     protected $fillable = [
+        'id',
         'gotra',
         'dawara',
 
      ];
+     public $timestamps = false;
 }

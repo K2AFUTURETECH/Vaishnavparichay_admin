@@ -15,4 +15,5 @@ class Tehsils extends Model
         'district_id',
         'name',
      ];
+     public $timestamps = false;
 }
