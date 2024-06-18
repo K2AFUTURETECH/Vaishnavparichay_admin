@@ -10,9 +10,9 @@
                         <h4 class="page-title">Gotra Listing</h4>
                     </div>
                     <div class="col-md-6 text-right">
-                        <a href="{{ route('gotra.add') }}" class="btn btn-primary">
+                        <a href="{{url('state/add')}}" class="btn btn-primary">
                             <i class="fas fa-plus"></i>
-                            Add New Gotra
+                            Add Gotra
                         </a>
                     </div>
                 </div>
