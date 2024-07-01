@@ -8,6 +8,8 @@ use App\Http\Controllers\DistrictController;
 use App\Http\Controllers\TehsilController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CityController;
+use App\Http\Controllers\MembersController;
+use App\Http\Controllers\FanilyController;
 
 // Route::get('/login', [\App\Http\Controllers\UserController::class, 'index'])->name('login');
 Route::get('/login', [UserController::class, 'index'])->name('login');
@@ -42,7 +44,7 @@ Route::middleware('auth')->group(function () {
     Route::post('tehsil/edittehsil/{id}', [TehsilController::class, 'update'])->name('tehsil.edittehsil');
     Route::get('tehsil/delete/{id}', [TehsilController::class, 'destroy'])->name('tehsil.delete');
 
-    //admin for vaishnav parichya Tehsils
+    //admin for vaishnav parichya City
     Route::get('city/listing', [CityController::class, 'listing'])->name('city.list');
     Route::get('city/add', [CityController::class, 'add'])->name('city.add');
     Route::post('city/addNew', [CityController::class, 'store'])->name('city.addNew');
@@ -50,13 +52,37 @@ Route::middleware('auth')->group(function () {
     Route::put('city/editcity/{id}', [CityController::class, 'update'])->name('city.editcity');
     Route::get('city/delete/{id}', [CityController::class, 'destroy'])->name('city.delete');
 
-    //admin for vaishnav parichya Tehsils
+    //admin for vaishnav parichya Gotra
     Route::get('gotra/listing', [GotrasController::class, 'listing'])->name('gotra.list');
     Route::get('gotra/add', [GotrasController::class, 'add'])->name('gotra.add');
     Route::post('gotra/addNew', [GotrasController::class, 'store'])->name('gotra.addNew');
     Route::get('gotra/edit/{id}', [GotrasController::class, 'edit'])->name('gotra.edit');
     Route::put('gotra/editgotra/{id}', [GotrasController::class, 'update'])->name('gotra.editgotra');
     Route::get('gotra/delete/{id}', [GotrasController::class, 'destroy'])->name('gotra.delete');
+
+    //admin for vaishnav parichya Member
+    Route::get('members/listing', [MembersController::class, 'listing'])->name('members.list');
+    Route::get('members/add', [MembersController::class, 'add'])->name('members.add');
+    Route::post('members/addNew', [MembersController::class, 'store'])->name('members.addNew');
+    Route::get('members/edit/{id}', [MembersController::class, 'edit'])->name('members.edit');
+    Route::put('members/editmembers/{id}', [MembersController::class, 'update'])->name('members.editmembers');
+    Route::get('members/delete/{id}', [MembersController::class, 'destroy'])->name('members.delete');
+
+    //admin for vaishnav parichya Fanily
+    Route::get('family/listing', [FanilyController::class, 'listing'])->name('family.list');
+    Route::get('family/add', [FanilyController::class, 'add'])->name('family.add');
+    Route::post('family/addNew', [FanilyController::class, 'store'])->name('family.addNew');
+    Route::get('family/edit/{id}', [FanilyController::class, 'edit'])->name('family.edit');
+    Route::put('family/editfamily/{id}', [FanilyController::class, 'update'])->name('family.editfamily');
+    Route::get('family/delete/{id}', [FanilyController::class, 'destroy'])->name('family.delete');
+
+    //admin for vaishnav parichya Member
+    Route::get('member/listing', [MembersController::class, 'listing'])->name('member.list');
+    Route::get('member/add', [MembersController::class, 'add'])->name('member.add');
+    Route::post('member/addNew', [MembersController::class, 'store'])->name('member.addNew');
+    Route::get('member/edit/{id}', [MembersController::class, 'edit'])->name('member.edit');
+    Route::put('member/editmember/{id}', [MembersController::class, 'update'])->name('member.editmember');
+    Route::get('member/delete/{id}', [MembersController::class, 'destroy'])->name('member.delete');
 });
 
 
@@ -89,7 +115,7 @@ Route::get('district/listing', [DistrictController::class, 'listing'])->name('di
 
 
 
-// php artisan make:controller GotrasController --model=Gotras
+// php artisan make:controller FanilyController --model=Fanily
 
 // php artisan make:migration change_column_users--table=tbl_tyremaster
 

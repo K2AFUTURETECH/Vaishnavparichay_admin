@@ -139,6 +139,13 @@
         }).buttons().container().appendTo('#data-table_wrapper .col-md-6:eq(0)');
     });
 </script>
+<script>
+    $(document).ready(function() {
+        setTimeout(function() {
+            $(".alert").alert("close");
+        }, 3000);
+    });
+</script>
 
 
 </html>

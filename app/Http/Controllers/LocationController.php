@@ -21,7 +21,7 @@ class LocationController extends Controller
 
         return view('home', compact('states'));
     }
-    
+
     public function district(Request $request, $stateid)
     {
 

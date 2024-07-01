@@ -22,5 +22,7 @@ class Families extends Model
         'fphoto',
         'fphoto2',
         'modified',
+        'created',
      ];
+     public $timestamps = false;
 }

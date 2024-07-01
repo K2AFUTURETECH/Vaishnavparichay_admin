@@ -27,4 +27,5 @@ class Members extends Model
         'photo',
         'photo',
      ];
+     public $timestamps = false;
 }

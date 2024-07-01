@@ -24,17 +24,23 @@
                 </a>
             </li>
             <li class="nav-item active">
-                <a href="{{ route('admin.admindashboard') }}">
+                <a href="{{ route('family.list') }}">
                     <i class="la la-user"></i>
                     <p>Family</p>
                 </a>
             </li>
-            <li class="nav-item active">
+            {{-- <li class="nav-item active">
+                <a href="{{ route('member.list') }}">
+                    <i class="la la-user"></i>
+                    <p>Memeber</p>
+                </a>
+            </li> --}}
+            {{-- <li class="nav-item active">
                 <a href="{{ route('admin.admindashboard') }}">
                     <i class="la la-user"></i>
                     <p>Member</p>
                 </a>
-            </li>
+            </li> --}}
             <hr>
             <li class="nav-item active">
                 <a href="{{ route('gotra.list') }}">
