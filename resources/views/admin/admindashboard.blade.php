@@ -6,7 +6,7 @@
     <div class="container-fluid">
         <h4 class="page-title">Dashboard</h4>
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <div class="card card-stats card-warning">
                     <div class="card-body ">
                         <div class="row">
@@ -18,14 +18,14 @@
                             <div class="col-7 d-flex align-items-center">
                                 <div class="numbers">
                                     <p class="card-category">Total Families</p>
-                                    <h4 class="card-title">1,294</h4>
+                                    <h4 class="card-title">{{ $totalFamilies }}</h4>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <div class="card card-stats card-success">
                     <div class="card-body ">
                         <div class="row">
@@ -37,14 +37,14 @@
                             <div class="col-7 d-flex align-items-center">
                                 <div class="numbers">
                                     <p class="card-category">Total Gotra</p>
-                                    <h4 class="card-title">1,345</h4>
+                                    <h4 class="card-title">{{$totalGotra}}</h4>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <div class="card card-stats card-danger">
                     <div class="card-body">
                         <div class="row">
@@ -56,14 +56,14 @@
                             <div class="col-7 d-flex align-items-center">
                                 <div class="numbers">
                                     <p class="card-category">Total Member</p>
-                                    <h4 class="card-title">1303</h4>
+                                    <h4 class="card-title">{{$totalMembers}}</h4>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            {{-- <div class="col-md-3">
                 <div class="card card-stats card-primary">
                     <div class="card-body ">
                         <div class="row">
@@ -81,7 +81,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
 
 

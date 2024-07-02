@@ -19,7 +19,16 @@ class DashboardController extends Controller
 {
     public function admin()
     {
-        return view('admin.admindashboard');
+        $totalFamilies = Families::count(); // Example query to count families
+        $totalGotra = Gotras::count(); // Example query to count Gotras
+        $totalMembers = Members::count(); // Example query to count members
+
+        return view('admin.admindashboard', [
+            'totalFamilies' => $totalFamilies,
+            'totalGotra' => $totalGotra,
+            'totalMembers' => $totalMembers,
+        ]);
+        // return view('admin.admindashboard');
     }
 
 

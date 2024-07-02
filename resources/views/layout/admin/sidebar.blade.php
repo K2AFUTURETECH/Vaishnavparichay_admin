@@ -5,9 +5,9 @@
                 <a href="{url('admin.admindashboard')}"><img src="{{ url('assets1/img/default.png') }}"></a>
             </div>
             <div class="info">
-                <a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
+                <a class="" data-toggle="collapse" href="#" aria-expanded="true">
                     <span>
-                        ADMIN
+                        {{-- ADMIN --}}
                         <span class="user-level">Administrator</span>
                         {{-- <span class="caret"></span> --}}
                     </span>
